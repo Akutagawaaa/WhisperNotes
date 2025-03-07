@@ -1,0 +1,151 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 40% 96%;
+    --foreground: 222 47% 10%;
+
+    --card: 45 40% 97%;
+    --card-foreground: 222 47% 10%;
+
+    --popover: 45 40% 97%;
+    --popover-foreground: 222 47% 10%;
+
+    --primary: 200 73% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 27 39% 69%;
+    --secondary-foreground: 222 47% 10%;
+
+    --muted: 45 20% 92%;
+    --muted-foreground: 215 16% 45%;
+
+    --accent: 130 23% 62%;
+    --accent-foreground: 222 47% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 200 73% 60%;
+
+    --radius: 0.75rem;
+
+    /* Ghibli colors as CSS variables */
+    --ghibli-sky: #A4C6E7;
+    --ghibli-sky-light: #D0E5F5;
+    --ghibli-beige: #F7EFE2;
+    --ghibli-terracotta: #D4A28B;
+    --ghibli-rose: #E6BAB7;
+    --ghibli-gold: #E6C17A;
+    --ghibli-forest: #8CAB93;
+    --ghibli-navy: #1F2937;
+    --ghibli-amber: #F8D078;
+    --ghibli-cream: #FEF9EF;
+  }
+
+  .dark {
+    --background: 222 47% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 10%;
+
+    --secondary: 40 60% 70%;
+    --secondary-foreground: 222 47% 10%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 75%;
+
+    --accent: 142 26% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-300;
+    background-image: radial-gradient(rgba(248, 208, 120, 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -20px -20px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Custom animation classes */
+@layer utilities {
+  .paper-shadow {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.04), 
+                0 4px 8px rgba(0,0,0,0.03);
+  }
+  
+  .paper-texture {
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ddd1bc' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .ink-transition {
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0)
+    );
+    background-size: 40rem 100%;
+    animation: shimmer 2s infinite linear;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn-ghibli {
+    @apply rounded-full bg-ghibli-gold text-ghibli-navy font-medium px-5 py-2 shadow-soft
+    hover:shadow-glow transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-outline {
+    @apply rounded-full bg-transparent border border-ghibli-gold text-ghibli-navy font-medium px-5 py-2
+    hover:bg-ghibli-gold/10 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95;
+  }
+  
+  .note-card {
+    @apply bg-ghibli-cream rounded-lg p-5 paper-shadow paper-texture
+    transition-all duration-300 ease-in-out transform hover:shadow-card hover:scale-[1.01] cursor-pointer;
+  }
+}
