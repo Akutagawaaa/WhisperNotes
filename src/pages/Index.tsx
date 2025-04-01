@@ -477,7 +477,7 @@ const Index = () => {
               </div>
             </div>
             <div className="mt-8 pt-6 border-t border-ghibli-beige/10 text-center text-sm text-ghibli-beige/60">
-              <p>© {new Date().getFullYear()} GhibliNotes. A magical note-taking experience.</p>
+              <p>© {new Date().getFullYear()} WhisperNotes. A whimsical note-taking experience.</p>
             </div>
           </div>
         </footer>
