@@ -8,14 +8,19 @@ interface EmptyStateProps {
   description?: string;
   action?: () => void;
   actionLabel?: string;
+  actionText?: string; // Added this prop for backward compatibility
 }
 
 const EmptyState = ({
   title = "No notes yet",
   description = "Start writing your first magical note",
   action,
-  actionLabel = "Create Note"
+  actionLabel,
+  actionText
 }: EmptyStateProps) => {
+  // Use actionText as fallback if actionLabel is not provided
+  const buttonText = actionLabel || actionText || "Create Note";
+  
   return (
     <motion.div 
       className="flex flex-col items-center justify-center py-16 px-4 text-center"
@@ -59,7 +64,7 @@ const EmptyState = ({
           className="btn-ghibli flex items-center gap-2"
         >
           <PenLine className="h-4 w-4" />
-          {actionLabel}
+          {buttonText}
         </Button>
       )}
     </motion.div>

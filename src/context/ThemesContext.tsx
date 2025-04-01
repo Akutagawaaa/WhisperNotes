@@ -17,6 +17,7 @@ interface ThemesContextType {
   themes: ThemeType[];
   currentTheme: ThemeType;
   setCurrentTheme: (theme: ThemeType) => void;
+  setDarkMode: (isDark: boolean) => void; // Added this method
   isLoading: boolean;
 }
 
@@ -121,10 +122,19 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [currentTheme, isLoading]);
 
+  // Add the setDarkMode method
+  const setDarkMode = (isDark: boolean) => {
+    setCurrentTheme({
+      ...currentTheme,
+      darkMode: isDark
+    });
+  };
+
   const value = {
     themes,
     currentTheme,
     setCurrentTheme,
+    setDarkMode, // Add to context value
     isLoading
   };
 
