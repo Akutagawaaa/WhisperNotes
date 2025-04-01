@@ -153,7 +153,7 @@ const NotebooksSection = () => {
             ) : (
               <EmptyState
                 action={handleNewNoteInNotebook}
-                message="This notebook is empty. Create your first note!"
+                actionText="Create your first note!"
               />
             )}
           </div>

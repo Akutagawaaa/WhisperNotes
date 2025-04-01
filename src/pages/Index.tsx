@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ import NotebooksSection from "@/components/NotebooksSection";
 import ThemeSelector from "@/components/ThemeSelector";
 import { useNotes } from "@/context/NotesContext";
 import { useThemes } from "@/context/ThemesContext";
-import { Book, ArrowRight, Tag, Star, PenLine, Pencil, Palette } from "lucide-react";
+import { Book, ArrowRight, Tag, Star, PenLine, Pencil, Palette, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const demoNotes = [
